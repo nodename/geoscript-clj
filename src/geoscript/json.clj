@@ -1,9 +1,11 @@
 (ns geoscript.json
   (:import
    [java.io StringWriter]
-   [org.geotools.geojson.feature FeatureJSON]))
+   [org.geotools.geojson.feature FeatureJSON]
+   [org.geotools.geojson.geom GeometryJSON]))
 
 (def *fjson* (FeatureJSON.))
+(defonce *geojson* (GeometryJson.))
 
 (defn feature->geojson [feature]
   "Writes a GeoTools Simple Feature to a "
@@ -24,3 +26,13 @@
 (defn geojson->collection [json]
   "Takes a geojson feature collection and returns a GeoTools FeatureCollection"
   (.readFeatureCollection *fjson* json))
+
+(defn geometry->geojson [geometry]
+  "Writes a geometry to a GeoJSON String"
+  (let [writer (StringWriter.)]
+    (.write *geojson* geometry writer)
+    writer))
+
+(defn geojson->geometry [geojson]
+  "Reads a geojson and parses into geometry"
+  (.read *geojson* geojson))
