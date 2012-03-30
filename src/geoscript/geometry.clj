@@ -110,12 +110,12 @@
 (defn create-multi-line-string
   [lines]
   (.createMultiLineString *factory*
-                          (into-array (map #(create-line-string %) lines ))))
+                          (into-array (map create-line-string lines))))
 
 (defn create-multi-polygon
   [polygons]
   (.createMultiPolygon *factory*
-                       (into-array (map #(create-polygon %) polygons))))
+                       (into-array (map create-polygon polygons))))
 
 
 (defn simplify [geometry tolerance]
