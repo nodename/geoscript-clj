@@ -27,7 +27,7 @@
   (list (.getX geometry) (.getY geometry)))
 
 (defmethod seq-on ::lines [geometry]
-  (map #(seq-on %) (.getCoordinates geometry)))
+  (map seq-on (.getCoordinates geometry)))
 
 (derive LineString ::lines)
 (derive LinearRing ::lines)
