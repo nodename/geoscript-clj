@@ -1,6 +1,5 @@
 (ns geoscript.render
   (:use
-   [clojure.contrib.seq-utils :only (seq-on)]
    [geoscript.io])
   (:import [org.geotools.data
             FeatureSource Query

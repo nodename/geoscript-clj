@@ -1,11 +1,9 @@
 (ns geoscript.io
-  (:require [clojure.contrib.string :as string])
   (:import
    [java.io File]
    [org.geotools.feature.simple SimpleFeatureTypeBuilder]
    [com.vividsolutions.jts.geom Geometry]
    [org.geotools.data.shapefile ShapefileDataStoreFactory]
-   [org.geotools.swing ProgressWindow]
    [org.geotools.data DefaultTransaction DataUtilities]
    [org.geotools.feature FeatureCollection]
    [org.geotools.feature.simple SimpleFeatureBuilder]
