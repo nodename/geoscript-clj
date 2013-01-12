@@ -5,6 +5,9 @@ Geoscript is a clojure library for working with Geospatial data. Its
 based on GeoTools and JTS.  If you are looking for other GeoTools
 based scripting libraries please see the Geoscript project. 
 
+This fork, nodename/geoscript-clj, makes no changes to iwilling's source except
+those needed to make it work under current Clojure environments.
+
 Requirements
 ------------
 
